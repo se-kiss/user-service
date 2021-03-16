@@ -13,9 +13,9 @@ export class CreateUserArgs
   @IsString()
   lastName: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  profileImageId: string;
+  profileImageId?: string;
 }
 
 export class UpdateUserArgs

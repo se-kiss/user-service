@@ -4,7 +4,7 @@ import { Document } from 'mongoose';
 export interface IUser {
   firstName: string;
   lastName: string;
-  profileImageId: string;
+  profileImageId?: string;
   _createdAt: Date;
   _updatedAt: Date;
 }
@@ -25,8 +25,8 @@ export class User extends Document implements IUser {
   @Prop({ type: String, required: true })
   lastName: string;
 
-  @Prop({ type: String, required: true })
-  profileImageId: string;
+  @Prop({ type: String, required: false })
+  profileImageId?: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
