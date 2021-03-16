@@ -12,6 +12,10 @@ export class CreateUserArgs
   @IsNotEmpty()
   @IsString()
   lastName: string;
+
+  @IsNotEmpty()
+  @IsString()
+  profileImageId: string;
 }
 
 export class UpdateUserArgs
@@ -27,6 +31,10 @@ export class UpdateUserArgs
   @IsOptional()
   @IsString()
   lastName?: string;
+
+  @IsOptional()
+  @IsString()
+  profileImageId?: string;
 }
 
 export class GetUsersArgs {

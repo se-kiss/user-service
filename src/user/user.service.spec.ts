@@ -49,6 +49,7 @@ describe('UserService', () => {
     const res = await service.createUser({
       firstName: 'test',
       lastName: 'test',
+      profileImageId: 'testImg',
     });
     expect(await mongoose.findById(res._id)).toBeDefined();
   });
@@ -57,6 +58,7 @@ describe('UserService', () => {
     const user = await service.createUser({
       firstName: 'test2',
       lastName: 'test2',
+      profileImageId: 'testImg',
     });
     const res = await service.getUsers({ ids: [user._id] });
     expect(res[0]._id).toEqual(user._id);
@@ -74,6 +76,7 @@ describe('UserService', () => {
     const user = await service.createUser({
       firstName: 'test3',
       lastName: 'test3',
+      profileImageId: 'testImg',
     });
     const args: UpdateUserArgs = {
       _id: user._id,
@@ -88,6 +91,7 @@ describe('UserService', () => {
     const user = await service.createUser({
       firstName: 'test4',
       lastName: 'test4',
+      profileImageId: 'testImg',
     });
     await service.deleteUser(user._id);
     expect(await service.getUsers({ ids: [user._id] })).toHaveLength(0);

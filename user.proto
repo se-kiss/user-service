@@ -13,8 +13,9 @@ message User {
   string _id = 1;
   string firstName = 2;
   string lastName = 3;
-  string _createdAt = 4;
-  string _updatedAt = 5;
+  string profileImageId = 4;
+  string _createdAt = 5;
+  string _updatedAt = 6;
 }
 
 message Users {
@@ -24,6 +25,7 @@ message Users {
 message CreateUserArgs {
   string firstName = 1;
   string lastName = 2;
+  string profileImageId = 3;
 }
 
 message GetUserArgs {
@@ -34,6 +36,7 @@ message UpdateUserArgs {
   string _id = 1;
   optional string firstName = 2;
   optional string lastName = 3;
+  optional string profileImageId = 4;
 }
 
 message DeleteUserArgs {
