@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kiss-user
-        image: registry.gitlab.com/nestz671/kiss-container-registries/user:0.0.1
+        image: registry.gitlab.com/nestz671/kiss-container-registries/user:0.0.2
         ports:
         - containerPort: 5000
         env:
